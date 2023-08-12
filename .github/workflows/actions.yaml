@@ -1,0 +1,21 @@
+name: Check
+on:
+  push:
+    paths:
+      - 'app/Dockerfile'
+  workflow_dispatch:
+
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+            - name: Run hadolint
+              uses: hadolint/hadolint-action@v3.1.0
+              with:
+                dockerfile: ./app/Dockerfile
+            - name: Build an image from Dockerfile
+              run: |
+                docker build -t flask-app:v1 ./app
