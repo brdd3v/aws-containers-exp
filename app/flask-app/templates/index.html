@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample App</title>
+  <style>
+    body {
+      background-color: rgba(62,75,92,255);
+    }
+
+    * {
+      color: #F9F9F3;
+      font-family: Helvetica;
+    }
+
+    .container {
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    table {
+      border: 1px solid;
+      border-collapse: collapse;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 8px;
+    }
+
+    th {
+      padding-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="container">
+      <table>
+      {% for key, value in data.items() %}
+      <tr>
+        <th> {{ key }} </th>
+        <td> {{ value }} </td>
+      </tr>
+      {% endfor %}
+      </table>
+    </div>
+</body>
+
+</html>
