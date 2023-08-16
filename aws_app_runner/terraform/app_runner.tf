@@ -7,7 +7,7 @@ data "aws_ecr_repository" "ecr_repo" {
 }
 
 data "aws_iam_role" "service_role" {
-  name = "AppRunnerECRAccessRole"
+  name = "AppRunnerECRAccessRole"  # Policy: AWSAppRunnerServicePolicyForECRAccess
 }
 
 resource "aws_apprunner_service" "svc" {
