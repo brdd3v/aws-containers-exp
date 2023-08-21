@@ -26,7 +26,7 @@ docker push <account>.dkr.ecr.eu-central-1.amazonaws.com/flask-app:v1
 ---------------------------------------
 
 ```
-eksctl create cluster --name=eks-cluster-exp --nodegroup-name=eks-node-group-exp --nodes=1 --instance-types=t2.small --region=eu-central-1
+eksctl create cluster --name=eks-cluster-exp --nodegroup-name=eks-node-group-exp --nodes=1 --instance-types=t3.medium --region=eu-central-1
 ```
 
 ```

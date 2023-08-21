@@ -20,3 +20,4 @@ spec:
             cpu: "512m"
         ports:
         - containerPort: 5000
+
