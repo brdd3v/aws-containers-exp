@@ -47,6 +47,7 @@ resource "aws_ecr_repository" "ecr_repo" {
 
 resource "docker_image" "image" {
   name = "${aws_ecr_repository.ecr_repo.repository_url}:${var.image_tag}"
+
   build {
     context = "../../app"
   }
