@@ -1,0 +1,27 @@
+name: Check
+on:
+  push:
+    paths:
+      - 'app/Dockerfile'
+
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-20.04
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+            - name: Run hadolint
+              uses: hadolint/hadolint-action@v3.1.0
+              with:
+                dockerfile: ./app/Dockerfile
+            - name: Build an image from Dockerfile
+              run: |
+                docker build -t flask-app:v1 ./app
+            - name: Run dockle
+              uses: goodwithtech/dockle-action@main
+              with:
+                image: 'flask-app:v1'
+                format: 'list'
+                exit-code: '1'
+                exit-level: 'warn'
