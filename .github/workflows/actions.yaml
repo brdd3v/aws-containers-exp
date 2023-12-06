@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'app/Dockerfile'
+  workflow_dispatch:
 
 jobs:
     build:
