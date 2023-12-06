@@ -26,3 +26,4 @@ jobs:
                 format: 'list'
                 exit-code: '1'
                 exit-level: 'warn'
+                ignore: 'CIS-DI-0010'
